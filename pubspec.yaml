@@ -1,0 +1,44 @@
+name: yoshlar
+description: "A new Flutter project."
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  go_router: ^17.0.1
+  logger: ^2.6.2
+  http: ^1.6.0
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.8
+  isar: ^3.1.0
+  isar_flutter_libs: ^3.1.0
+  bloc: ^9.2.0
+  fluttertoast: ^9.0.0
+  http_parser: ^4.1.2
+  shimmer: ^3.0.0
+  permission_handler: ^12.0.1
+  easy_search_bar_2: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  isar_generator: ^3.1.0
+  build_runner: ^2.4.6
+
+
+flutter:
+
+
+  uses-material-design: true
+
+
