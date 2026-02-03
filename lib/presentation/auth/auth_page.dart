@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:yoshlar/presentation/nazorat/nazorat_screen.dart';
+import 'package:yoshlar/presentation/yoshlar/main/main_screen.dart';
 
 import 'widgets/custom_input_widget.dart';
 
@@ -65,7 +68,9 @@ class LoginPage extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pushNamed(MainScreen.routeName);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF3B82F6),
                     shape: RoundedRectangleBorder(
@@ -74,7 +79,34 @@ class LoginPage extends StatelessWidget {
                     elevation: 0,
                   ),
                   child: const Text(
-                    "Tizimga kirish",
+                    "Ma'sullar tizimiga kirish",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+
+              // Kirish tugmasi
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    context.pushNamed(DashboardPage.routeName);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF3B82F6),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    elevation: 0,
+                  ),
+                  child: const Text(
+                    "Rahbariyat tizimiga kirish",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -84,7 +116,6 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-
               // Parolni tiklash
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

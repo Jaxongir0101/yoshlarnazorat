@@ -25,6 +25,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         appBarTheme: const AppBarTheme(centerTitle: true),
         useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFF8FAFC),
       ),
       routerConfig: appRouter,
     );

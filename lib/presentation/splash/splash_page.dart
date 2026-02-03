@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yoshlar/presentation/auth/auth_page.dart';
-import 'package:yoshlar/presentation/main/main_screen.dart';
+import 'package:yoshlar/presentation/yoshlar/main/main_screen.dart';
 
 class SplashPage extends StatefulWidget {
   static const String routeName = '/';
@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> init() async {
-    context.pushReplacementNamed(MainScreen.routeName);
+    context.pushReplacementNamed(LoginPage.routeName);
   }
 
   @override

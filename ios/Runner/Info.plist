@@ -41,6 +41,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Ushbu ilova faoliyat hisobotiga rasm biriktirish uchun galereyadan foydalanishga ruxsat so'raydi.</string>
+  <key>NSCameraUsageDescription</key>
+  <string>Ushbu ilova faoliyat suratini olish uchun kameradan foydalanishga ruxsat so'raydi.</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Ushbu ilova video yozib olishda mikrofondan foydalanishga ruxsat so'raydi.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
