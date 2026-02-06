@@ -105,7 +105,8 @@ class _MainScreenState extends State<MainScreen> {
                 image: "assets/images/person.jpeg",
                 birthDate: "2005-03-15",
                 gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
+                location:
+                    "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
                 status: "Ta'lim Olmoqda",
                 activity: "O'qimoqda",
                 riskLevel: "O'rta xavf",
@@ -127,7 +128,8 @@ class _MainScreenState extends State<MainScreen> {
                 image: "assets/images/person.jpeg",
                 birthDate: "2005-03-15",
                 gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
+                location:
+                    "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
                 status: "Ta'lim Olmoqda",
                 activity: "O'qimoqda",
                 riskLevel: "O'rta xavf",
@@ -149,7 +151,8 @@ class _MainScreenState extends State<MainScreen> {
                 image: "assets/images/person.jpeg",
                 birthDate: "2005-03-15",
                 gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
+                location:
+                    "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
                 status: "Ta'lim Olmoqda",
                 activity: "O'qimoqda",
                 riskLevel: "O'rta xavf",
@@ -170,17 +173,26 @@ class _MainScreenState extends State<MainScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.blue.shade50,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: const Color(0xFFE8EEF3)),
       ),
       child: Row(
         children: [
           // Avatar qismi
-          CircleAvatar(
-            radius: 24,
-            backgroundColor: Colors.blue.shade50,
-            child: const Icon(Icons.person, color: Color(0xFF3384C3)),
+          // CircleAvatar(
+          //   radius: 24,
+          //   backgroundColor: Colors.blue.shade50,
+          //   child: const Icon(Icons.person, color: Color(0xFF3384C3)),
+          // ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12.0),
+            child: Image.asset(
+              "assets/images/TurayevAlijon.png",
+              height: 64,
+              width: 64,
+              fit: BoxFit.cover,
+            ),
           ),
           const SizedBox(width: 12),
           // Ma'lumotlar
@@ -189,11 +201,11 @@ class _MainScreenState extends State<MainScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "Ergashev Dilshod Anvarovich",
+                  "To'rayev Alijon Baxromovich",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 const Text(
-                  "Bosh mutaxassis",
+                  "Jizzax shahar prokurorining o'rinbosari",
                   style: TextStyle(color: Colors.grey, fontSize: 14),
                 ),
                 const SizedBox(height: 8),

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:go_router/go_router.dart';
+import 'package:yoshlar/presentation/nazorat/main/diagramma.dart';
 import 'package:yoshlar/presentation/nazorat/masullar/widgets/masul_yoshlar.dart';
 
 class NazoratMainScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _NazoratMainScreenState extends State<NazoratMainScreen> {
     "Giyohvandlar va spirtli ichimliklar ruju quyganlar",
     "Mehribonlik uyidan chiqqanlar",
     "Agressiv xulq-atvorli yoshlar",
-    "Boshqa toifalar",
+    "Ma'muriy huquqbuzarlik sodir etganlar",
   ];
   @override
   Widget build(BuildContext context) {
@@ -40,10 +41,12 @@ class _NazoratMainScreenState extends State<NazoratMainScreen> {
               _buildHeader(),
               const SizedBox(height: 20),
               _buildSectionTitle("Asosiy ko'rsatkichlar"),
-              _buildMainStats(),
+              SizedBox(child: _buildMainStats()),
               const SizedBox(height: 24),
               _buildSectionTitle("Toifalar bo'yicha"),
               _buildCategoryGrid(),
+              const SizedBox(height: 20),
+              RegionsBarChart(),
             ],
           ),
         ),
@@ -78,32 +81,35 @@ class _NazoratMainScreenState extends State<NazoratMainScreen> {
   }
 
   Widget _buildMainStats() {
-    return GridView.count(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 3,
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      children: [
-        GestureDetector(
-          onTap: () {
-            context.pushNamed(MasulYoshlarScreen.routeName);
-          },
-          child: _statCard("180", "Jami yoshlar", Icons.people, Colors.blue),
-        ),
-        GestureDetector(
-          onTap: () {
-            context.pushNamed(MasulYoshlarScreen.routeName);
-          },
-          child: _statCard("100", "O'g'il bolalar", Icons.male, Colors.blue),
-        ),
-        GestureDetector(
-          onTap: () {
-            context.pushNamed(MasulYoshlarScreen.routeName);
-          },
-          child: _statCard("90", "Qiz bolalar", Icons.female, Colors.purple),
-        ),
-      ],
+    return SizedBox(
+      child: GridView.count(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        crossAxisCount: 3,
+        crossAxisSpacing: 30,
+        mainAxisSpacing: 30,
+        childAspectRatio: 2,
+        children: [
+          GestureDetector(
+            onTap: () {
+              context.pushNamed(MasulYoshlarScreen.routeName);
+            },
+            child: _statCard("180", "Jami yoshlar", Icons.people, Colors.blue),
+          ),
+          GestureDetector(
+            onTap: () {
+              context.pushNamed(MasulYoshlarScreen.routeName);
+            },
+            child: _statCard("100", "O'g'il bolalar", Icons.male, Colors.blue),
+          ),
+          GestureDetector(
+            onTap: () {
+              context.pushNamed(MasulYoshlarScreen.routeName);
+            },
+            child: _statCard("90", "Qiz bolalar", Icons.female, Colors.purple),
+          ),
+        ],
+      ),
     );
   }
 
@@ -127,7 +133,7 @@ class _NazoratMainScreenState extends State<NazoratMainScreen> {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 10, color: Colors.grey),
+            style: const TextStyle(fontSize: 12, color: Colors.black87),
           ),
         ],
       ),
@@ -141,9 +147,9 @@ class _NazoratMainScreenState extends State<NazoratMainScreen> {
       itemCount: 8, // Misol uchun 6 ta toifa
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        childAspectRatio: 2.5,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+        childAspectRatio: 5,
       ),
       itemBuilder: (context, index) {
         return GestureDetector(
@@ -178,7 +184,7 @@ class _NazoratMainScreenState extends State<NazoratMainScreen> {
                     style: TextStyle(
                       color: Colors.red,
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: 18,
                     ),
                   ),
                 ),
@@ -192,7 +198,7 @@ class _NazoratMainScreenState extends State<NazoratMainScreen> {
                         categories[index],
                         overflow: TextOverflow.clip,
 
-                        style: TextStyle(fontSize: 10, color: Colors.grey),
+                        style: TextStyle(fontSize: 14, color: Colors.black),
                       ),
                     ],
                   ),

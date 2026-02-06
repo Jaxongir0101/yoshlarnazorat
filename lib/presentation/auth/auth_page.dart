@@ -23,20 +23,19 @@ class LoginPage extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  // color: Colors.blue,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Icon(
-                  Icons.people_outline,
-                  color: Colors.white,
-                  size: 40,
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  height: 100,
+                  fit: BoxFit.contain,
                 ),
               ),
-              const SizedBox(height: 24),
 
               // Sarlavhalar
               const Text(
-                "Nazoratdagi Yoshlar",
+                "Yoshlar nazorati",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),

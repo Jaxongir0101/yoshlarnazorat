@@ -2,9 +2,11 @@ import 'package:go_router/go_router.dart';
 import 'package:yoshlar/main.dart';
 import 'package:yoshlar/presentation/auth/auth_page.dart';
 import 'package:yoshlar/presentation/nazorat/masullar/widgets/add_masul.dart';
+import 'package:yoshlar/presentation/nazorat/masullar/widgets/attacht_yoshlar.dart';
 import 'package:yoshlar/presentation/nazorat/masullar/widgets/masul_yoshlar.dart';
 import 'package:yoshlar/presentation/nazorat/nazorat_screen.dart';
 import 'package:yoshlar/presentation/nazorat/yoshlar/nazorat_yoshlar_item/add_yoshlar.dart';
+import 'package:yoshlar/presentation/nazorat/yoshlar/nazorat_yoshlar_item/history_into_page.dart';
 import 'package:yoshlar/presentation/nazorat/yoshlar/nazorat_yoshlar_item/nazorat_yoshlar_history.dart';
 import 'package:yoshlar/presentation/splash/splash_page.dart';
 import 'package:yoshlar/presentation/yoshlar/main/add_activity/add_activity.dart';
@@ -47,6 +49,17 @@ class AppRouter {
             path: 'add_masul',
             builder: (context, state) => AddOfficerScreen(),
           ),
+          GoRoute(
+            name: AttachYouthScreen.routeName,
+            path: 'attacht_yoshlar',
+            builder: (context, state) => AttachYouthScreen(),
+          ),
+          GoRoute(
+            name: NazoratHistoryIntoPage.routeName,
+            path: 'history_into_page',
+            builder: (context, state) => NazoratHistoryIntoPage(),
+          ),
+
           GoRoute(
             name: MasulYoshlarScreen.routeName,
             path: 'masul_yoshlar',

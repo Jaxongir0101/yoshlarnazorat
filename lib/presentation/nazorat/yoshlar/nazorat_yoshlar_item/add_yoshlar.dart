@@ -120,25 +120,9 @@ class _AddYouthScreenState extends State<AddYouthScreen> {
       title: "Yashash manzili",
       child: Column(
         children: [
-          _buildDropdown(
-            label: "Viloyat *",
-            items: ["Toshkent", "Samarqand", "Farg'ona"],
-          ),
+          _buildTextField(label: "Tuman *", hint: "Tuman nomi"),
           const SizedBox(height: 16),
-          Row(
-            children: [
-              Expanded(
-                child: _buildTextField(label: "Tuman *", hint: "Tuman nomi"),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: _buildTextField(
-                  label: "Mahalla *",
-                  hint: "Mahalla nomi",
-                ),
-              ),
-            ],
-          ),
+          _buildTextField(label: "Mahalla *", hint: "Mahalla nomi"),
           const SizedBox(height: 16),
           _buildTextField(
             label: "To'liq manzil *",
@@ -172,11 +156,6 @@ class _AddYouthScreenState extends State<AddYouthScreen> {
                 ),
               ),
             ],
-          ),
-          const SizedBox(height: 16),
-          _buildDropdown(
-            label: "Xavf toifasi *",
-            items: ["Past xavf", "O'rta xavf", "Yuqori xavf"],
           ),
         ],
       ),

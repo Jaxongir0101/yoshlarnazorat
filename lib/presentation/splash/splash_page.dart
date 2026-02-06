@@ -49,7 +49,13 @@ class _SplashPageState extends State<SplashPage> {
         child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [],
+          children: [
+            Image(
+              image: AssetImage('assets/images/logo.png'),
+              width: 240,
+              height: 240,
+            ),
+          ],
         ),
       ),
     );

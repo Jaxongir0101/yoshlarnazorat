@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yoshlar/data/model/user.dart';
-import 'package:yoshlar/presentation/yoshlar/main/main_item_screen.dart/history_screen.dart';
+import 'package:yoshlar/presentation/nazorat/yoshlar/nazorat_yoshlar_item/nazorat_yoshlar_history.dart';
 
-class UserCardWidget extends StatelessWidget {
+class NazoratUserCardWidget extends StatelessWidget {
   final UserModel user;
 
-  const UserCardWidget({super.key, required this.user});
+  const NazoratUserCardWidget({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.pushNamed(HistoryPage.routeName);
+        context.pushNamed(NazoratYoshlarHistory.routeName);
       },
       child: Card(
         margin: const EdgeInsets.only(bottom: 16),
@@ -81,23 +81,36 @@ class UserCardWidget extends StatelessWidget {
                 user.tags[0],
                 Colors.black,
               ),
-
-              // const SizedBox(height: 8),
-              // // Kategoriyalar (Oq/Kulrang rangli)
-              // Wrap(
-              //   spacing: 8,
-              //   runSpacing: 8,
-              //   children: user.categories
-              //       .map(
-              //         (cat) => _buildTag(
-              //           cat,
-              //           Colors.white,
-              //           Colors.black,
-              //           border: true,
-              //         ),
-              //       )
-              //       .toList(),
-              // ),
+              Divider(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Row(
+                  children: [
+                    Icon(Icons.person_outline, size: 24, color: Colors.blue),
+                    SizedBox(width: 4),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "To'rayev Alijon Baxromovich",
+                          style: TextStyle(fontSize: 14, color: Colors.black87),
+                        ),
+                        Text(
+                          "Bosh mutaxassis",
+                          style: TextStyle(fontSize: 12, color: Colors.black87),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Icon(Icons.call, size: 18, color: Colors.blue),
+                    SizedBox(width: 4),
+                    Text(
+                      "+998 90 123 45 67",
+                      style: TextStyle(fontSize: 14, color: Colors.blue),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -121,17 +134,14 @@ class UserCardWidget extends StatelessWidget {
 
   Widget _buildCardButton(IconData icon, String label, Color color) {
     return OutlinedButton.icon(
-      onPressed: null,
+      onPressed: () {},
       icon: Padding(
         padding: const EdgeInsets.only(left: 8),
-        child: Icon(icon, size: 16, color: Colors.black87),
+        child: Icon(icon, size: 16),
       ),
       label: Padding(
         padding: const EdgeInsets.only(right: 8),
-        child: Text(
-          label,
-          style: const TextStyle(fontSize: 14, color: Colors.black87),
-        ),
+        child: Text(label, style: const TextStyle(fontSize: 13)),
       ),
       style: OutlinedButton.styleFrom(
         foregroundColor: color,

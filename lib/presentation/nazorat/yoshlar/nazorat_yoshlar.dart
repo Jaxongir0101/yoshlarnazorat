@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yoshlar/data/model/user.dart';
 import 'package:yoshlar/presentation/nazorat/yoshlar/nazorat_yoshlar_item/add_yoshlar.dart';
-import 'package:yoshlar/presentation/nazorat/yoshlar/nazorat_yoshlar_item/nazorat_yoshlar_history.dart';
-import 'package:yoshlar/presentation/yoshlar/main/widgets/main_widget.dart';
+import 'package:yoshlar/presentation/nazorat/yoshlar/nazorat_yoshlar_item/user_card.dart';
 
 class NazoratYoshlarScreen extends StatefulWidget {
   const NazoratYoshlarScreen({super.key});
@@ -76,61 +75,48 @@ class _NazoratYoshlarScreenState extends State<NazoratYoshlarScreen> {
           ),
           const SizedBox(height: 8),
           // Misol uchun bitta karta
-          GestureDetector(
-            onTap: () {
-              context.pushNamed(NazoratYoshlarHistory.routeName);
-            },
-            child: UserCardWidget(
-              user: UserModel(
-                name: "Aliyev Jasur Karimovich",
-                image: "assets/images/person.jpeg",
-                birthDate: "2005-03-15",
-                gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
-                status: "Ta'lim Olmoqda",
-                activity: "O'qimoqda",
-                riskLevel: "O'rta xavf",
-                tags: [
-                  "Probatsiya nazoratidagilar",
-                  "Ma'muriy huquqbuzarlik...",
-                ],
-                categories: ["Ta'limdagi qiyinchiliklar", "Oilaviy muammolar"],
-              ),
+          NazoratUserCardWidget(
+            user: UserModel(
+              name: "Aliyev Jasur Karimovich",
+              image: "assets/images/person.jpeg",
+              birthDate: "2005-03-15",
+              gender: "O'g'il bola",
+              location:
+                  "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
+              status: "Ta'lim Olmoqda",
+              activity: "O'qimoqda",
+              riskLevel: "O'rta xavf",
+              tags: ["Probatsiya nazoratidagilar", "Ma'muriy huquqbuzarlik..."],
+              categories: ["Ta'limdagi qiyinchiliklar", "Oilaviy muammolar"],
+            ),
+          ),
+          NazoratUserCardWidget(
+            user: UserModel(
+              name: "Aliyev Jasur Karimovich",
+              image: "assets/images/person.jpeg",
+              birthDate: "2005-03-15",
+              gender: "O'g'il bola",
+              location:
+                  "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
+              status: "Ta'lim Olmoqda",
+              activity: "O'qimoqda",
+              riskLevel: "O'rta xavf",
+              tags: ["Probatsiya nazoratidagilar", "Ma'muriy huquqbuzarlik..."],
+              categories: ["Ta'limdagi qiyinchiliklar", "Oilaviy muammolar"],
             ),
           ),
           GestureDetector(
             onTap: () {
               // context.pushNamed(HistoryPage.routeName);
             },
-            child: UserCardWidget(
+            child: NazoratUserCardWidget(
               user: UserModel(
                 name: "Aliyev Jasur Karimovich",
                 image: "assets/images/person.jpeg",
                 birthDate: "2005-03-15",
                 gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
-                status: "Ta'lim Olmoqda",
-                activity: "O'qimoqda",
-                riskLevel: "O'rta xavf",
-                tags: [
-                  "Probatsiya nazoratidagilar",
-                  "Ma'muriy huquqbuzarlik...",
-                ],
-                categories: ["Ta'limdagi qiyinchiliklar", "Oilaviy muammolar"],
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              // context.pushNamed(HistoryPage.routeName);
-            },
-            child: UserCardWidget(
-              user: UserModel(
-                name: "Aliyev Jasur Karimovich",
-                image: "assets/images/person.jpeg",
-                birthDate: "2005-03-15",
-                gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
+                location:
+                    "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
                 status: "Ta'lim Olmoqda",
                 activity: "O'qimoqda",
                 riskLevel: "O'rta xavf",

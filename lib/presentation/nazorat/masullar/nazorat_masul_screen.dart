@@ -112,7 +112,7 @@ class _NazoratMasulScreenState extends State<NazoratMasulScreen> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
                 child: Image.asset(
-                  "assets/images/person.jpeg",
+                  "assets/images/TurayevAlijon.png",
                   height: 80,
                   width: 80,
                   fit: BoxFit.cover,
@@ -129,7 +129,7 @@ class _NazoratMasulScreenState extends State<NazoratMasulScreen> {
                       children: [
                         const Expanded(
                           child: Text(
-                            "Ergashev Dilshod Anvarovich",
+                            "To'rayev Alijon Baxromovich",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 15,

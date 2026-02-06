@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:yoshlar/data/model/user.dart';
+import 'package:yoshlar/presentation/nazorat/masullar/widgets/attacht_yoshlar.dart';
 import 'package:yoshlar/presentation/yoshlar/main/widgets/main_widget.dart';
 
 class MasulYoshlarScreen extends StatefulWidget {
@@ -29,6 +31,14 @@ class _MasulYoshlarScreenState extends State<MasulYoshlarScreen> {
             fontSize: 18,
           ),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person_add, color: Colors.black),
+            onPressed: () {
+              context.pushNamed(AttachYouthScreen.routeName);
+            },
+          ),
+        ],
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -45,7 +55,8 @@ class _MasulYoshlarScreenState extends State<MasulYoshlarScreen> {
                 image: "assets/images/person.jpeg",
                 birthDate: "2005-03-15",
                 gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
+                location:
+                    "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
                 status: "Ta'lim Olmoqda",
                 activity: "O'qimoqda",
                 riskLevel: "O'rta xavf",
@@ -67,7 +78,8 @@ class _MasulYoshlarScreenState extends State<MasulYoshlarScreen> {
                 image: "assets/images/person.jpeg",
                 birthDate: "2005-03-15",
                 gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
+                location:
+                    "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
                 status: "Ta'lim Olmoqda",
                 activity: "O'qimoqda",
                 riskLevel: "O'rta xavf",
@@ -89,7 +101,8 @@ class _MasulYoshlarScreenState extends State<MasulYoshlarScreen> {
                 image: "assets/images/person.jpeg",
                 birthDate: "2005-03-15",
                 gender: "O'g'il bola",
-                location: "Toshkent shahri, Chilonzor tumani...",
+                location:
+                    "Jizzax shahar, Sayiljoyi mahallasi, Narimonoc ko'chasi 8-uy",
                 status: "Ta'lim Olmoqda",
                 activity: "O'qimoqda",
                 riskLevel: "O'rta xavf",
@@ -102,39 +115,6 @@ class _MasulYoshlarScreenState extends State<MasulYoshlarScreen> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildGenderDropdown(List<String> items, item) {
-    return Expanded(
-      child: Container(
-        margin: const EdgeInsets.only(right: 4, left: 4),
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        decoration: BoxDecoration(
-          color: Colors.white, // bg-card
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.grey.shade300), // border-input
-        ),
-        child: DropdownButtonHideUnderline(
-          child: DropdownButton<String>(
-            value: item,
-            isExpanded: true, // w-full justify-between effektini beradi
-            icon: Icon(
-              Icons.keyboard_arrow_down,
-              color: Colors.grey.shade600,
-              size: 20,
-            ),
-            dropdownColor: Colors.white,
-            style: const TextStyle(color: Colors.black87, fontSize: 13),
-            onChanged: (String? newValue) {
-              // setState(() { selectedGender = newValue!; });
-            },
-            items: items.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(value: value, child: Text(value));
-            }).toList(),
-          ),
-        ),
       ),
     );
   }
